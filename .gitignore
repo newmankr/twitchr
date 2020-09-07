@@ -1,0 +1,8 @@
+.env
+package-lock.json
+.clang-format
+node_modules/
+output.log
+yarn.lock
+src/**/*.js
+src/**/*.map
