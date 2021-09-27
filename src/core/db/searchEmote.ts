@@ -1,9 +1,9 @@
 import { connectToDB } from "./connect";
 
-export async function findEmote(emote: string) {
-  const db = await connectToDB();
-  const collection = await db.collection("emotes");
-  const result = await collection.findOne({ title: emote });
+export default async function findEmoteOnDB(emote: string): Promise<number | null> {
+    const db = await connectToDB();
+    const collection = db.collection("emotes");
+    const result = await collection.findOne({ title: emote });
 
-  if (result != null) return result.id;
+    return result?.id;
 }

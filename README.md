@@ -6,8 +6,7 @@ Twitch chat experience on Telegram. [Access here!](https://t.me/twitchrbot)
 
 ## 📌 Features
 
-- BTTV emotes on any chat (check available emotes with `/emotes`)
-- Search FrankerFaceZ emotes inline
+-   BTTV emotes on any chat (check available emotes with `/emotes`)
 
 ## 📜 License
 

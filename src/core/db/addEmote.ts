@@ -1,11 +1,12 @@
 import { connectToDB } from "./connect";
+import { InsertOneResult, Document } from "mongodb";
 
-export async function addEmote(emote: string, id: string) {
-  const db = await connectToDB();
-  const collection = db.collection("emotes");
+export async function addEmoteToDB(emote: string, id: string): Promise<InsertOneResult<Document>> {
+    const db = await connectToDB();
+    const collection = db.collection("emotes");
 
-  return await collection.insertOne({
-    title: emote,
-    id: id,
-  });
+    return await collection.insertOne({
+        title: emote,
+        id: id,
+    });
 }

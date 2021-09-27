@@ -1,10 +1,11 @@
-import { setupEmoteHandlers } from "./commands/emotes";
-import { bot } from "./core/bot/bot";
-import { updateEmoteList } from "./helpers/updateEmoteList";
-import { setupInlineQuery } from "./helpers/inlineQueryHelper";
+require("dotenv").config();
 
-setupInlineQuery(bot);
-setupEmoteHandlers(bot);
-updateEmoteList();
+import commands from "./commands";
+import bot from "./core/bot";
+import events from "./events";
+import { development, production } from "./utils/launch";
 
-bot.startPolling();
+commands(bot);
+events(bot);
+
+process.env.NODE_ENV === "development" ? development(bot) : production(bot);
